@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100d2a">
+<meta name="description" content="A little Diwali night letter for Misa, made with love.">
+<title>For Misa ✨ — Happy Diwali, My Love</title>
+<style>
+:root{--night:#100d2a;--gold:#ffd98a;--rose:#ffb5c8;--cream:#fff3dc;--muted:#d9cfe9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,Cambria,"Times New Roman",serif;background:radial-gradient(ellipse at 50% 8%,rgba(90,66,145,.32),transparent 42%),radial-gradient(ellipse at 12% 75%,rgba(115,42,83,.18),transparent 32%),linear-gradient(160deg,#0b0920 0%,var(--night) 48%,#1b1031 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}
+.page{position:relative;z-index:1;min-height:100vh;isolation:isolate}
+.topline{position:absolute;top:27px;left:0;right:0;text-align:center;letter-spacing:.28em;text-transform:uppercase;color:#d6c2ea;font:10px/1.5 system-ui,sans-serif;opacity:.8}
+.hero{min-height:100svh;padding:92px 22px 60px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
+.moon-wrap{width:min(45vw,220px);aspect-ratio:1;position:relative;margin:12px auto 25px;filter:drop-shadow(0 0 28px rgba(255,217,138,.28));animation:moonrise 1.8s ease-out both}
+.moon{position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff9e8 0,#ffe6ad 38%,#edbd73 75%,#bd8048 100%);box-shadow:inset -15px -10px 22px rgba(108,62,58,.18),0 0 55px rgba(255,214,143,.26);overflow:hidden}
+.moon:before,.moon:after{content:"";position:absolute;border-radius:50%;background:rgba(184,132,89,.12)}
+.moon:before{width:24%;height:17%;left:22%;top:35%;transform:rotate(-25deg)}
+.moon:after{width:15%;height:15%;right:22%;bottom:27%}
+.moon-cut{position:absolute;width:88%;height:88%;border-radius:50%;background:var(--night);top:-6%;right:-39%;opacity:.96}
+.orbit{position:absolute;inset:-19%;border:1px solid rgba(255,223,164,.15);border-radius:50%;transform:rotate(-20deg) scaleY(.42)}
+.orbit:after{content:"✦";position:absolute;right:13%;top:18%;color:var(--gold);font-size:15px}
+.eyebrow{color:var(--gold);font:11px/1.6 system-ui,sans-serif;letter-spacing:.34em;text-transform:uppercase;margin:0 0 12px}
+h1{margin:0;font-size:clamp(42px,8vw,82px);line-height:.98;font-weight:400;letter-spacing:-.045em;text-shadow:0 5px 30px rgba(255,182,99,.14)}
+h1 span{color:var(--rose);font-style:italic}
+.hero-sub{max-width:540px;margin:20px auto 0;color:#e4d9ed;font-size:clamp(16px,2.7vw,20px);line-height:1.7}
+.scroll-cue{margin-top:36px;display:inline-flex;flex-direction:column;gap:9px;align-items:center;color:#b9aacd;text-decoration:none;font:10px system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.scroll-cue i{display:block;width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:pulse 1.8s infinite}
+.stars{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.star{position:absolute;color:#fff0ca;opacity:.72;animation:twinkle var(--d,3s) ease-in-out infinite alternate;font-size:var(--s,9px)}
+.diya-row{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-around;align-items:end;opacity:.88;pointer-events:none}
+.diya{width:64px;height:35px;position:relative;margin-bottom:12px}
+.diya:before{content:"";position:absolute;width:62px;height:25px;left:1px;bottom:0;border-radius:0 0 50% 50%;background:linear-gradient(180deg,#f6b75f,#a74c32);box-shadow:0 7px 20px rgba(255,130,61,.2);clip-path:ellipse(50% 50% at 50% 0%)}
+.flame{position:absolute;width:13px;height:22px;left:25px;bottom:17px;border-radius:80% 0 80% 80%;transform:rotate(45deg);background:linear-gradient(135deg,#fffbd4 5%,#ffda73 48%,#ff843d 90%);box-shadow:0 0 18px 6px rgba(255,177,72,.28);animation:flicker .9s ease-in-out infinite alternate}
+.section{padding:90px 22px;position:relative}
+.letter,.question-card{width:min(720px,100%);margin:0 auto;padding:clamp(28px,6vw,58px);text-align:center;border:1px solid rgba(255,220,168,.2);border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 25px 90px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.1);backdrop-filter:blur(12px)}
+.letter-mark{color:var(--gold);font-size:26px;margin-bottom:20px}
+.letter h2{font-weight:400;font-size:clamp(30px,5vw,48px);line-height:1.12;margin:0 auto 24px}
+.letter h2 em{color:var(--rose);font-weight:400}
+.letter p{color:var(--muted);font-size:clamp(16px,2.4vw,18px);line-height:1.9;margin:0 auto 18px;max-width:570px}
+.letter .highlight{color:var(--cream);font-size:clamp(19px,3vw,24px);line-height:1.55;margin:28px auto}
+.divider{width:70px;height:1px;margin:30px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.promise{color:var(--gold)!important;font-style:italic}
+.signoff{margin-top:32px!important;color:var(--rose)!important;font-size:23px!important}
+.question-card{padding:clamp(28px,6vw,54px)}
+.question-card h2{margin:0 auto 16px;font-size:clamp(28px,5vw,43px);line-height:1.15;font-weight:400}
+.question-card p{max-width:560px;margin:0 auto 22px;color:var(--muted);font-size:16px;line-height:1.8}
+.answer-box{display:block;width:100%;min-height:150px;resize:vertical;border:1px solid rgba(255,220,168,.28);border-radius:16px;padding:17px 18px;background:rgba(9,7,25,.42);color:var(--cream);font:16px/1.7 Georgia,serif;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.answer-box::placeholder{color:#a99abf;opacity:.9}
+.answer-box:focus{border-color:rgba(255,217,138,.8);box-shadow:0 0 0 3px rgba(255,217,138,.1)}
+.send-answer,.surprise{border:1px solid rgba(255,217,138,.55);border-radius:999px;padding:14px 24px;background:linear-gradient(135deg,rgba(255,217,138,.2),rgba(255,181,200,.12));color:var(--cream);cursor:pointer;font:12px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:.25s ease}
+.send-answer{margin-top:18px}
+.send-answer:hover,.surprise:hover{transform:translateY(-2px);background:rgba(255,217,138,.22)}
+.send-answer:disabled{opacity:.65;cursor:wait;transform:none}
+.form-status{min-height:26px;margin:16px auto 0!important;color:var(--gold)!important;font:13px/1.6 system-ui,sans-serif!important}
+.privacy-note{margin:10px auto 0!important;font:11px/1.6 system-ui,sans-serif!important;color:#b9aacd!important}
+.surprise{margin:34px auto 0;display:inline-flex;align-items:center;gap:10px;background:rgba(255,217,138,.09)}
+.hidden-note{max-height:0;overflow:hidden;opacity:0;transition:max-height .8s ease,opacity .7s ease,margin .7s ease;color:var(--rose);font-size:clamp(20px,3vw,26px);line-height:1.5;font-style:italic}
+.hidden-note.show{max-height:180px;opacity:1;margin-top:28px}
+footer{text-align:center;padding:30px 20px 50px;color:#a99abf;font:10px system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.petal{position:fixed;top:-20px;z-index:4;pointer-events:none;color:var(--rose);animation:fall linear forwards;text-shadow:0 0 8px rgba(255,181,200,.35)}
+@keyframes twinkle{from{opacity:.25;transform:scale(.75)}to{opacity:.95;transform:scale(1.2)}}
+@keyframes flicker{from{transform:rotate(41deg) scale(.9)}to{transform:rotate(49deg) scale(1.06)}}
+@keyframes pulse{0%,100%{opacity:.45;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1.12)}}
+@keyframes moonrise{from{opacity:0;transform:translateY(25px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(500deg);opacity:0}}
+@media(max-width:600px){.topline{top:19px;font-size:9px;letter-spacing:.2em}.hero{padding-top:75px;padding-bottom:68px}.moon-wrap{width:170px}.diya:nth-child(even){transform:scale(.72)}.section{padding:48px 16px 62px}.letter{border-radius:20px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="stars" id="stars" aria-hidden="true"></div>
+<div class="topline">A little light, from my heart to yours</div>
+<main>
+<section class="hero" aria-label="A Diwali wish for Misa">
+<div class="moon-wrap" aria-hidden="true"><div class="moon"><div class="moon-cut"></div></div><div class="orbit"></div></div>
+<p class="eyebrow">For my favourite person</p>
+<h1>Happy Diwali,<br><span>Misa.</span></h1>
+<p class="hero-sub">Tonight, every little light reminds me of you. And somehow, even the moon has a little competition.</p>
+<a class="scroll-cue" href="#letter"><span>Open your little letter</span><i></i></a>
+<div class="diya-row" aria-hidden="true"><div class="diya"><span class="flame"></span></div><div class="diya"><span class="flame"></span></div><div class="diya"><span class="flame"></span></div><div class="diya"><span class="flame"></span></div><div class="diya"><span class="flame"></span></div></div>
+</section>
+<section class="section" id="letter">
+<article class="letter">
+<div class="letter-mark" aria-hidden="true">✧</div>
+<p class="eyebrow">A thought I had while looking at the moon</p>
+<h2>Chaand mein bhi daag hain,<br><em>par tum mein ek bhi nahi.</em></h2>
+<p>I was looking at the moon tonight, and I found myself thinking about you. The moon is beautiful, but even it has its imperfections. And then there's you — beautiful just as you are.</p>
+<div class="divider"></div>
+<p class="highlight">Happy Diwali, my love. ❤️</p>
+<p>I know life doesn't always go the way we hope. Some days are messy, difficult, and unfair. But I want you to remember one thing: I'm not leaving you, Misa. Not when things get hard, and not when life feels imperfect.</p>
+<p class="promise">Chahe cheezein kitni bhi mushkil kyun na ho jaayein, I'll stay by your side — through the brightest days and the darkest nights. Always.</p>
+<p>Just as these little diyas keep glowing in the dark, I'll keep choosing you, again and again. I may not always get everything right, but I promise to listen, learn, and grow with you.</p>
+<p class="signoff">With all my love, always. ♡</p>
+<button class="surprise" id="surprise" type="button"><span>✦</span> A little Diwali surprise <span>✦</span></button>
+<div class="hidden-note" id="hiddenNote" aria-live="polite">No matter how dark the night gets,<br>you'll never have to face it alone. ❤️</div>
+</article>
+</section>
+<section class="section" id="one-question">
+<article class="question-card">
+<p class="eyebrow">One thing I want to ask you</p>
+<h2>Can you be honest with me, Misa?</h2>
+<p>What's one thing I keep doing that you wish I would change or do differently? I genuinely want to understand. You can be completely honest with me — I'll listen with an open heart.</p>
+<form id="answerForm">
+<label for="misaAnswer" class="eyebrow" style="display:block;margin:0 0 12px;letter-spacing:.12em">Your answer, in your own words</label>
+<textarea class="answer-box" id="misaAnswer" name="message" placeholder="Tell me honestly... I'm listening. ❤️" minlength="2" maxlength="3000" required></textarea>
+<button class="send-answer" id="sendAnswer" type="submit">Send your answer to me ♡</button>
+<p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+<p class="privacy-note">Your answer will be emailed directly to my inbox.</p>
+</form>
+</article>
+</section>
+</main>
+<footer>Made with love, just for Misa · ✧</footer>
+</div>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<58;i++){
+ const star=document.createElement('span');
+ star.className='star';
+ star.textContent=Math.random()>.82?'✦':'·';
+ star.style.left=(Math.random()*100)+'%';
+ star.style.top=(Math.random()*100)+'%';
+ star.style.setProperty('--d',(2+Math.random()*4)+'s');
+ star.style.setProperty('--s',(5+Math.random()*10)+'px');
+ stars.appendChild(star);
+}
+const button=document.getElementById('surprise');
+const note=document.getElementById('hiddenNote');
+button.addEventListener('click',()=>{
+ const isOpen=note.classList.toggle('show');
+ button.innerHTML=isOpen?'<span>♡</span> Keep this close <span>♡</span>':'<span>✦</span> A little Diwali surprise <span>✦</span>';
+ if(isOpen){
+  for(let i=0;i<24;i++){
+   const petal=document.createElement('span');
+   petal.className='petal';
+   petal.textContent=Math.random()>.5?'✦':'♡';
+   petal.style.left=(Math.random()*100)+'vw';
+   petal.style.fontSize=(10+Math.random()*13)+'px';
+   petal.style.setProperty('--drift',((Math.random()-.5)*180)+'px');
+   petal.style.animationDuration=(3+Math.random()*3)+'s';
+   document.body.appendChild(petal);
+   setTimeout(()=>petal.remove(),6500);
+  }
+ }
+});
+const answerForm=document.getElementById('answerForm');
+const answerField=document.getElementById('misaAnswer');
+const sendAnswer=document.getElementById('sendAnswer');
+const formStatus=document.getElementById('formStatus');
+answerForm.addEventListener('submit',async(event)=>{
+ event.preventDefault();
+ const message=answerField.value.trim();
+ if(message.length<2){formStatus.textContent='Please write a little more before sending. ❤️';answerField.focus();return;}
+ sendAnswer.disabled=true;
+ sendAnswer.textContent='Sending your message…';
+ formStatus.textContent='';
+ try{
+  const response=await fetch('https://formsubmit.co/ajax/narayansingh28489@gmail.com',{
+   method:'POST',
+   headers:{'Content-Type':'application/json','Accept':'application/json'},
+   body:JSON.stringify({name:'Misa',message:message,_subject:'A little honest note from Misa ❤️',_template:'table'})
+  });
+  if(!response.ok)throw new Error('The form service could not accept the message.');
+  const result=await response.json();
+  if(result.success==='false'||result.success===false)throw new Error(result.message||'The message could not be sent.');
+  formStatus.textContent='Your message has been sent. Thank you for being honest with me. ❤️';
+  answerField.value='';
+  sendAnswer.textContent='Sent with love ♡';
+ }catch(error){
+  formStatus.textContent='I couldn’t send that just now. Please try again in a moment.';
+  sendAnswer.textContent='Try sending again ♡';
+  sendAnswer.disabled=false;
+ }
+});
+</script>
+</body>
+</html>
