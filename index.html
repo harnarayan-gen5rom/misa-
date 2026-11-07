@@ -152,27 +152,58 @@ const answerForm=document.getElementById('answerForm');
 const answerField=document.getElementById('misaAnswer');
 const sendAnswer=document.getElementById('sendAnswer');
 const formStatus=document.getElementById('formStatus');
+
 answerForm.addEventListener('submit',async(event)=>{
  event.preventDefault();
  const message=answerField.value.trim();
- if(message.length<2){formStatus.textContent='Please write a little more before sending. ❤️';answerField.focus();return;}
+
+ if(message.length<2){
+  formStatus.textContent='Please write a little more before sending. ❤️';
+  answerField.focus();
+  return;
+ }
+
  sendAnswer.disabled=true;
  sendAnswer.textContent='Sending your message…';
  formStatus.textContent='';
+
  try{
   const response=await fetch('https://formsubmit.co/ajax/narayansingh28489@gmail.com',{
    method:'POST',
    headers:{'Content-Type':'application/json','Accept':'application/json'},
-   body:JSON.stringify({name:'Misa',message:message,_subject:'A little honest note from Misa ❤️',_template:'table'})
+   body:JSON.stringify({
+    name:'Misa',
+    message:message,
+    _subject:'A little honest note from Misa ❤️',
+    _template:'table',
+    _url:window.location.href
+   })
   });
-  if(!response.ok)throw new Error('The form service could not accept the message.');
-  const result=await response.json();
-  if(result.success==='false'||result.success===false)throw new Error(result.message||'The message could not be sent.');
+
+  let result={};
+  try{
+   result=await response.json();
+  }catch(parseError){
+   throw new Error('The email service returned an unreadable response.');
+  }
+
+  if(!response.ok || String(result.success).toLowerCase()!=='true'){
+   const serviceMessage=String(result.message||'').trim();
+   if(/activat/i.test(serviceMessage)){
+    formStatus.textContent='One-time setup: please check your inbox for an activation email from FormSubmit and click its Activate Form link. Then try sending again. ❤️';
+   }else{
+    formStatus.textContent=serviceMessage||'Your message could not be sent just now. Please try again.';
+   }
+   throw new Error(serviceMessage||'Form submission failed.');
+  }
+
   formStatus.textContent='Your message has been sent. Thank you for being honest with me. ❤️';
   answerField.value='';
   sendAnswer.textContent='Sent with love ♡';
  }catch(error){
-  formStatus.textContent='I couldn’t send that just now. Please try again in a moment.';
+  if(!formStatus.textContent){
+   formStatus.textContent='I couldn’t send that just now. Please check your connection and try again. ❤️';
+  }
   sendAnswer.textContent='Try sending again ♡';
   sendAnswer.disabled=false;
  }
